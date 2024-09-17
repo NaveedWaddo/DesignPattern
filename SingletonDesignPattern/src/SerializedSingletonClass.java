@@ -19,5 +19,8 @@ public class SerializedSingletonClass implements Serializable {
         return s;
     }
 
-
+    //This can fix the problem of singleton behaviour
+    protected Object readResolve() {
+        return getInstance();
+    }
 }
